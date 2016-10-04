@@ -5,3 +5,6 @@
 #
 
 - include: "{{ mod_wsgi_installation }}/main.yml"
+
+- include: script.yml
+  tags: scripts
