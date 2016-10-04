@@ -1132,6 +1132,7 @@ play-name=%{GROUP}
 
 mod_wsgi_scripts:
   - name: example
+    enable: yes
     script: |
       def application(environ, start_response):
           status = '200 OK'
