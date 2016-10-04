@@ -94,6 +94,9 @@ $ vagrant ssh trusty64.vagrant.dev
 
 ## Links
 
+- [mod_wsgi > User Guides > Quick Installation Guide](https://modwsgi.readthedocs.io/en/develop/user-guides/quick-installation-guide.html)
+
+
 [ansible]:  https://ansible.com/    "Ansible"
 [ansiblebit.httpd]: https://github.com/ansiblebit/httpd "ansiblebit.httpd"
 [mod_wsgi]: https://modwsgi.readthedocs.io/en/develop/index.html    "mod_wsgi documentation"
