@@ -22,6 +22,6 @@
     group="{{ httpd_user }}"
     mode=0644
   become: yes
-  with_items: "{{ mod_wsgi_app }}"
+  with_items: "{{ mod_wsgi_scripts }}"
   when: mod_wsgi_use_httpd is defined and
         mod_wsgi_use_httpd

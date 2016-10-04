@@ -1130,7 +1130,7 @@ play-name=%{GROUP}
           </Directory>
       </VirtualHost>
 
-mod_wsgi_app:
+mod_wsgi_scripts:
   - name: example
     script: |
       def application(environ, start_response):
