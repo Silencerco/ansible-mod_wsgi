@@ -765,7 +765,8 @@ httpd_modules_dynamic:
           # Show Proxy LoadBalancer status in mod_status
           ProxyStatus On
       </IfModule>
-
+  - name: wsgi
+    enabled: yes
 
 httpd_modules_static: []
 
