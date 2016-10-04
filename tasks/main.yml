@@ -11,5 +11,5 @@
 - include: validation.yml
   tags: validation
 
-- include: "{{ httpd_installation }}/main.yml"
+- include: "{{ mod_wsgi_installation }}/main.yml"
   tags: installation

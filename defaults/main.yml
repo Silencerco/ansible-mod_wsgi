@@ -4,4 +4,5 @@
 # defaults file
 #
 
+mod_wsgi_installation: package
 mod_wsgi_use_httpd: false
