@@ -13,3 +13,15 @@
 
 - include: "{{ mod_wsgi_installation }}/main.yml"
   tags: installation
+
+- name: setup WSGI scripts
+  template:
+    src=var/www/wsgi/app.wsgi.j2
+    dest="{{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
+    owner="{{ httpd_user }}"
+    group="{{ httpd_user }}"
+    mode=0644
+  become: yes
+  with_items: "{{ mod_wsgi_app }}"
+  when: mod_wsgi_use_httpd is defined and
+        mod_wsgi_use_httpd
