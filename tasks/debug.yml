@@ -8,4 +8,5 @@
     var="{{ item }}"
   when: "{{ item }} is defined"
   with_items:
+    - mod_wsgi_installation
     - mod_wsgi_use_httpd
