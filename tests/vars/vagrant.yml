@@ -1118,13 +1118,9 @@ httpd_sites:
           ServerName nowhere.example.com
           ServerAdmin someone@example.com
 
-          WSGIDaemonProcess nowhere.example.com processes=2 threads=15 dis
-play-name=%{GROUP}
-          WSGIProcessGroup nowhere
+          WSGIScriptAlias / {{ mod_wsgi_dir_scripts }}/example.wsgi
 
-          WSGIScriptAlias / {{ mod_wsgi_dir_app }}/nowhere.wsgi
-
-          <Directory {{ mod_wsgi_dir_app }}>
+          <Directory {{ mod_wsgi_dir_scripts }}>
               Order deny,allow
               Allow from all
           </Directory>
@@ -1139,7 +1135,7 @@ mod_wsgi_scripts:
           output = 'Hello World!'
 
           response_headers = [('Content-type', 'text/plain'),
-                              ('Content-Length', str(len(output)))]
+                            ('Content-Length', str(len(output)))]
           start_response(status, response_headers)
 
           return [output]
