@@ -1,0 +1,35 @@
+---
+# file: mod_wsgi/tests/tasks/main.yml
+#
+# tests to check WSGI script generation.
+#
+
+- name: WSGI scripts have been setup?
+
+-
+- name: WSGI scripts have been setup?
+
+- name: scripts | script files are present?
+  command: "test -e {{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
+  with_items: "{{ mod_wsgi_scripts }}"
+  become: yes
+  changed_when: no
+
+- name: copy to server expected configuration
+  copy:
+    src="files/{{ item }}"
+    dest="/tmp/{{ item.replace('/', '_') }}.expected"
+    owner="{{ httpd_user.name }}"
+    group="{{ httpd_user.name }}"
+    mode=0644
+  become: yes
+  with_items:
+    - var/www/wsgi/example.wsgi
+  changed_when: no
+
+- name: ensure WSGI scriptes were generated as expected
+  command: "diff -q -w /{{ item }} /tmp/{{ item.replace('/', '_') }}.expected"
+  become: yes
+  with_items:
+    - var/www/wsgi/example.wsgi
+  changed_when: no
