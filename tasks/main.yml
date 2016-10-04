@@ -25,7 +25,7 @@
   with_items: "{{ mod_wsgi_scripts }}"
   when: mod_wsgi_use_httpd is defined and
         mod_wsgi_use_httpd and
-        "{{ item.enable is defined and {{ item.enable }}"
+        "{{ item.enable is defined and item.enable }}"
 
 - name: scripts | removal
   file:
