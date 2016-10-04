@@ -24,4 +24,16 @@
   become: yes
   with_items: "{{ mod_wsgi_scripts }}"
   when: mod_wsgi_use_httpd is defined and
-        mod_wsgi_use_httpd
+        mod_wsgi_use_httpd and
+        "{{ item.enable is defined and {{ item.enable }}"
+
+- name: scripts | removal
+  file:
+    path="{{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
+    state=absent
+  become: yes
+  with_items: "{{ mod_wsgi_scripts }}"
+  when: mod_wsgi_use_httpd is defined and
+        mod_wsgi_use_httpd and
+        ("{{ item.enable is defined and not item.enable }}")
+
