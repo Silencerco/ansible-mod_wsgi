@@ -31,3 +31,4 @@ dependencies:
   - role: ansiblebit.httpd
     when: mod_wsgi_use_httpd is defined and
           mod_wsgi_use_httpd
+    tags: [ apache, httpd ]
