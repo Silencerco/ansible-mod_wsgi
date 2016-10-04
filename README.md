@@ -34,7 +34,7 @@
 - **debug**: flag to run debug tasks.
 
 - **mod_wsgi_scripts**: list of WSGI scripts to be setup.
-- **mod_wsgi_dir_app**: directory where WSGI applications will reside.
+- **mod_wsgi_dir_scripts**: directory where WSGI applications will reside.
 - **mod_wsgi_installation**: the installation method: `build` or `package`.
 - **mod_wsgi_use_httpd**: flag to indicate if [ansiblebit.httpd][ansiblebit.httpd] dependency is enabled.
 
