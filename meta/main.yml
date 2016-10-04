@@ -20,6 +20,12 @@ galaxy_info:
         - vivid
         - trusty
         - precise
+  galaxy_tags:
+    - apache
+    - debian
+    - mod_wsgi
+    - ubuntu
+    - web
 dependencies:
   - role: ansiblebit.httpd
     when: mod_wsgi_use_httpd is defined and mod_wsgi_use_httpd
