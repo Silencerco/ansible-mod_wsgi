@@ -776,7 +776,7 @@ httpd_ports:
 httpd_sites:
   - order: '000'
     name: default
-    enabled: yes
+    enabled: no
     configuration: |
       <VirtualHost *:80>
           # The ServerName directive sets the request scheme, hostname and port that
