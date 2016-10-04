@@ -4,18 +4,13 @@
 # tests to check WSGI script generation.
 #
 
-- name: WSGI scripts have been setup?
-
--
-- name: WSGI scripts have been setup?
-
 - name: scripts | script files are present?
   command: "test -e {{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
   with_items: "{{ mod_wsgi_scripts }}"
   become: yes
   changed_when: no
 
-- name: copy to server expected configuration
+- name: scripts | copy to server expected configuration
   copy:
     src="files/{{ item }}"
     dest="/tmp/{{ item.replace('/', '_') }}.expected"
@@ -27,7 +22,7 @@
     - var/www/wsgi/example.wsgi
   changed_when: no
 
-- name: ensure WSGI scriptes were generated as expected
+- name: scripts | ensure WSGI scriptes were generated as expected
   command: "diff -q -w /{{ item }} /tmp/{{ item.replace('/', '_') }}.expected"
   become: yes
   with_items:
