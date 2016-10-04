@@ -1,0 +1,8 @@
+---
+# file: httpd/tasks/package/main.yml
+#
+# package tasks file
+#
+
+- include: validation.yml
+  tags: validation

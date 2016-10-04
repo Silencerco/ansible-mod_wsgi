@@ -11,6 +11,5 @@
 - include: validation.yml
   tags: validation
 
-- debug: >
-    msg="invoked"
-
+- include: "{{ httpd_installation }}/main.yml"
+  tags: installation
