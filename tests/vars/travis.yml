@@ -1112,6 +1112,12 @@ httpd_configuration: |
   Include sites-enabled/*.conf
 
 httpd_sites:
+  - order: '000'
+    name: default
+    enabled: no
+  - order: '000'
+    name: 'default-ssl'
+    enabled: no
   - name: example
     order: '001'
     enabled: yes
