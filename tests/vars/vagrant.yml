@@ -1110,3 +1110,22 @@ httpd_sites:
 
           </VirtualHost>
       </IfModule>
+  - name: example
+    order: '001'
+    enabled: yes
+    configuration: |
+      <VirtualHost *>
+          ServerName nowhere.example.com
+          ServerAdmin someone@example.com
+
+          WSGIDaemonProcess nowhere.example.com processes=2 threads=15 dis
+play-name=%{GROUP}
+          WSGIProcessGroup nowhere
+
+          WSGIScriptAlias / {{ mod_wsgi_dir_app }}/nowhere.wsgi
+
+          <Directory {{ mod_wsgi_dir_app }}>
+              Order deny,allow
+              Allow from all
+          </Directory>
+      </VirtualHost>
