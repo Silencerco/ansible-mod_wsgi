@@ -14,9 +14,9 @@
 - include: "{{ mod_wsgi_installation }}/main.yml"
   tags: installation
 
-- name: setup WSGI scripts
+- name: scripts | setup
   template:
-    src=var/www/wsgi/app.wsgi.j2
+    src=var/www/wsgi/script.wsgi.j2
     dest="{{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
     owner="{{ httpd_user }}"
     group="{{ httpd_user }}"
