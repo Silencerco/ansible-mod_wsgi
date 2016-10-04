@@ -1,0 +1,10 @@
+---
+# file: mod_wsgi/tasks/package/debug.yml
+#
+# debug tasks.
+#
+
+- debug:
+    var="{{ item }}"
+  when: "{{ item }} is defined"
+  with_items: []
