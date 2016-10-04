@@ -8,8 +8,8 @@
   file:
     path="{{ mod_wsgi_dir_scripts }}"
     state=directory
-    owner="{{ httpd_user }}"
-    group="{{ httpd_user }}"
+    owner="{{ httpd_user.name }}"
+    group="{{ httpd_user.name }}"
     mode=0755
   become: yes
 
@@ -17,8 +17,8 @@
   template:
     src=var/www/wsgi/script.wsgi.j2
     dest="{{ mod_wsgi_dir_scripts }}/{{ item.name }}.wsgi"
-    owner="{{ httpd_user }}"
-    group="{{ httpd_user }}"
+    owner="{{ httpd_user.name }}"
+    group="{{ httpd_user.name }}"
     mode=0644
   become: yes
   with_items: "{{ mod_wsgi_scripts }}"
