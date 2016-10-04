@@ -32,6 +32,7 @@
 ## Role Variables
 
 - **debug**: flag to run debug tasks.
+- **mod_wsgi_use_httpd**: flag to indicate if [ansiblebit.httpd][ansiblebit.httpd] dependency is enabled.
 
 
 ## Dependencies
