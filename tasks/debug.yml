@@ -1,5 +1,5 @@
 ---
-# file: tasks/debug.yml
+# file: mod_wsgi/tasks/debug.yml
 #
 # debug tasks.
 #
@@ -8,5 +8,4 @@
     var="{{ item }}"
   when: "{{ item }} is defined"
   with_items:
-    - debug
-
+    - mod_wsgi_use_httpd

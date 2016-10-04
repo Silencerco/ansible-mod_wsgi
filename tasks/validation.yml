@@ -9,5 +9,4 @@
     msg="{{ item }} is a mandatory variable"
   when: "{{ item }} is not defined"
   with_items:
-    - debug
-
+    - mod_wsgi_use_httpd
