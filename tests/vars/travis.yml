@@ -1110,3 +1110,34 @@ httpd_configuration: |
 
   # Include the virtual host configurations:
   Include sites-enabled/*.conf
+
+httpd_sites:
+  - name: example
+    order: '001'
+    enabled: yes
+    configuration: |
+      <VirtualHost *>
+          ServerName nowhere.example.com
+          ServerAdmin someone@example.com
+
+          WSGIScriptAlias / {{ mod_wsgi_dir_scripts }}/example.wsgi
+
+          <Directory {{ mod_wsgi_dir_scripts }}>
+              Order deny,allow
+              Allow from all
+          </Directory>
+      </VirtualHost>
+
+mod_wsgi_scripts:
+  - name: example
+    enable: yes
+    script: |
+      def application(environ, start_response):
+          status = '200 OK'
+          output = 'Hello World!'
+
+          response_headers = [('Content-type', 'text/plain'),
+                            ('Content-Length', str(len(output)))]
+          start_response(status, response_headers)
+
+          return [output]
