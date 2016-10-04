@@ -1,7 +1,7 @@
-# primogen
+# mod_wsgi
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/primogen/master/LICENSE)
-[![Build Status](https://travis-ci.org/ansiblebit/primogen.svg?branch=master)](https://travis-ci.org/ansiblebit/primogen)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/ansiblebit/mod_wsgi/master/LICENSE)
+[![Build Status](https://travis-ci.org/ansiblebit/mod_wsgi.svg?branch=master)](https://travis-ci.org/ansiblebit/mod_wsgi)
 
 [![Platform](http://img.shields.io/badge/platform-amazon-ff9900.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-debian-a80030.svg?style=flat)](#)
@@ -17,7 +17,7 @@
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 [![Platform](http://img.shields.io/badge/platform-windows-004185.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/ansiblebit-primogen/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-primogen/)
+[![Project Stats](https://www.openhub.net/p/ansiblebit-mod_wsgi/widgets/project_thin_badge.gif)](https://www.openhub.net/p/ansiblebit-mod_wsgi/)
 
 A brief description of the role goes here.
 

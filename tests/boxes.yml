@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/boxes.yml
+# file: mod_wsgi/tests/boxes.yml
 #
 
 vagrant:

@@ -1,5 +1,5 @@
 ---
-# file: primogen/tests/tasks
+# file: mod_wsgi/tests/tasks
 #
 # Test tasks to verify role execution.
 #
