@@ -36,6 +36,20 @@
 - **mod_wsgi_use_httpd**: flag to indicate if [ansiblebit.httpd][ansiblebit.httpd] dependency is enabled.
 
 
+### package
+
+Variables specific to the `package` installation process.
+
+- **mod_wsgi_version**: (optional) the [mod_wsgi][mod_wsgi] debian package version to be installed.
+
+
+### build
+
+Variables specific to the `build` installation process.
+
+- **mod_wsgi_version**: the [mod_wsgi][mod_wsgi] version to be installed.
+
+
 ## Dependencies
 
 - [ansiblebit.httpd][ansiblebit.httpd] (optional)
