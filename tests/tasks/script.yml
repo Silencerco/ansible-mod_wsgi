@@ -5,7 +5,7 @@
 #
 
 - name: scripts | script files are present?
-  command: "test -e {{ mod_wsgi_dir_install }}/{{ item.name }}.wsgi"
+  command: "test -e {{ mod_wsgi_dir_scripts }}/{{ item.name }}.wsgi"
   with_items: "{{ mod_wsgi_scripts }}"
   become: yes
   changed_when: no
