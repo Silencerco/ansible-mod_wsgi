@@ -26,6 +26,7 @@
         mod_wsgi_use_httpd and
         item.enable is defined and
         item.enable }}"
+  notify: restart httpd
 
 - name: scripts | removal
   file:
@@ -37,3 +38,4 @@
         mod_wsgi_use_httpd and
         item.enable is defined and
         not item.enable }}"
+  notify: restart httpd
