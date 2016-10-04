@@ -10,7 +10,7 @@
   become: yes
   changed_when: no
 
-- name: scripts | copy to server expected configuration
+- name: scripts | upload test resources
   copy:
     src="files/{{ item }}"
     dest="/tmp/{{ item.replace('/', '_') }}.expected"
@@ -19,12 +19,28 @@
     mode=0644
   become: yes
   with_items:
+    - tmp/out
     - var/www/wsgi/example.wsgi
   changed_when: no
 
-- name: scripts | ensure WSGI scriptes were generated as expected
+- name: scripts | ensure WSGI scripts were generated as expected
   command: "diff -q -w /{{ item }} /tmp/{{ item.replace('/', '_') }}.expected"
   become: yes
   with_items:
     - var/www/wsgi/example.wsgi
+  changed_when: no
+
+- name: scripts | access WSGI application
+  get_url:
+    url: http://127.0.0.1/
+    dest: /tmp/out
+    mode: 0440
+  become: yes
+  changed_when: no
+
+- name: scripts | ensure WSGI script is running
+  command: "diff -q -w /{{ item }} /tmp/{{ item.replace('/', '_') }}.expected"
+  become: yes
+  with_items:
+    - out
   changed_when: no
