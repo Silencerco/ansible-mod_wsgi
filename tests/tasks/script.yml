@@ -32,9 +32,9 @@
 
 - name: scripts | access WSGI application
   get_url:
-    url: http://127.0.0.1/
-    dest: /tmp/out
-    mode: 0440
+    url=http://127.0.0.1/
+    dest=/tmp/out
+    mode=0440
   become: yes
   changed_when: no
 
@@ -42,5 +42,5 @@
   command: "diff -q -w /{{ item }} /tmp/{{ item.replace('/', '_') }}.expected"
   become: yes
   with_items:
-    - out
+    - tmp/out
   changed_when: no
