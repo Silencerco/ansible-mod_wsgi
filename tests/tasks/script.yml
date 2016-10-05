@@ -36,6 +36,7 @@
     dest=/tmp/out
     mode=0440
   become: yes
+  when: env == 'vagrant'
   changed_when: no
 
 - name: scripts | ensure WSGI script is running
@@ -43,4 +44,5 @@
   become: yes
   with_items:
     - tmp/out
+  when: env == 'vagrant'
   changed_when: no
